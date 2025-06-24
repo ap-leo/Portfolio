@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
 
+
 body {
   display: flex;
   flex-direction: column;
@@ -103,14 +104,14 @@ body {
   background-image: url('imgs/marina.jpg');
 }
 .mus:nth-of-type(5){
-  background-image: url('imgs/grimes.jpg');
+  background-image: url('imgs/fio.jpg');
 }
 .mus:nth-of-type(6){
   background-image: url('imgs/kali.jpg');
 }
 
 .fil:nth-of-type(1){
-  background-image: url('imgs/cisne.jpeg');
+  background-image: url('imgs/girl.jpg');
 }
 .fil:nth-of-type(2){
   background-image: url('imgs/people.jpg');
@@ -122,7 +123,7 @@ body {
   background-image: url('imgs/monstros.jpg');
 }
 .fil:nth-of-type(5){
-  background-image: url('imgs/central.jpeg');
+  background-image: url('imgs/kag.png');
 }
 .fil:nth-of-type(6){
   background-image: url('imgs/interstellar.jpeg');
@@ -412,6 +413,10 @@ li a:hover {
   background-image: url('imgs/primavera.png');
 }
 
+.card:nth-of-type(7) {
+  background-image: url('imgs/adt.png');
+}
+
 #acesse{
   border-radius: 33px;
   border: white 1px solid;
@@ -535,24 +540,33 @@ li a:hover {
 
 @media only screen and (max-width: 750px) {
 
+  .trd p {
+    font-size: 1em;
+    margin-bottom: 5px;
+  }
+
   .trd {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100vh;
+    height: 90%;
     width: 100vw;
     padding: 0;
     margin-bottom: 30%;
     overflow-x: hidden;
   }
 
-  .cards {
+ .cards {
     display: flex;
     flex-direction: row;
-    gap: 10px;
-    height: 50%;
+    gap: 15px;
+    height: auto;
     width: 100%;
-    overflow-x: scroll;
+    max-height: none;
+    gap: 15px;
+    padding: 5px 0;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
   }
 
   .auxiliar {
@@ -567,8 +581,10 @@ li a:hover {
   }
 
   .card {
-    min-width: 150px;
-    min-height: 100px;
+    flex: 0 0 70vw; /
+    min-height: 250px; 
+    border-radius: 20px;
+    scroll-snap-align: start; 
   }
 
   .trd h1 {
@@ -626,7 +642,36 @@ li a:hover {
     flex-direction: column;
   }
   
-  .fft{
-    display: none;
+.fft {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(20,20,20,0.95);
+    z-index: 999;
+    transform: translateX(100%); /* escondido fora da tela */
+    transition: transform 0.4s ease;
+  }
+
+  .fft h1{
+    font-size: 2em;
+  }
+  .fft h2{
+    font-size: 2em;
+  }
+
+  .fft.active {
+    transform: translateX(0); /* visível */
+  }
+
+ .linha {
+    width: 100vw !important;
+    overflow-x: hidden;
   }
 }

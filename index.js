@@ -26,6 +26,8 @@ cards.forEach((card) => {
         trd.style.right = "100vw"
         trd.style.height="100vh"
 
+        fft.classList.add("active");
+
         const classes = Array.from(card.classList);
 
         switch (classes[1]) {
@@ -49,7 +51,7 @@ cards.forEach((card) => {
                 titulo.innerText = "LabMeta"
                 sub.innerHTML = "<p class = 'descricao'>Eu e meu amigo Jun Sasaki estamos desenvolvendo o site para o Laboratório de Metaverso da UFPR. Ele conta um um código muito bom para manutenção sem necessidade de códigos extras!</p>"
                 instagram.style.display="none";
-                site.href="https://labmeta-web.github.io/site/"
+                site.href="https://ap-leo.github.io/LabMETA/"
                 break;
             case "card4":
                 fft.style.background = "linear-gradient(225deg, #F6971D 0.58%, #3DBFC3 74.43%)"
@@ -73,6 +75,14 @@ cards.forEach((card) => {
                 instagram.href="https://www.instagram.com/primaveraemacao_ufpr/"
                 site.href="https://insta.ufpr.br/primaveraemacao/"
                 break;
+            case "card7":
+                fft.style.background = "linear-gradient(158deg, #124E59 14.41%, #24A0B7 114.33%)"
+                titulo.innerText = "Aceleradora de Talentos UFPR"
+                sub.innerHTML = "<p class = 'descricao'>Um projeto do Setor de Tecnologia. Tive a oportunidade de criar a marca e partipar dos eventos.</p>"
+                instagram.style.display="flex";
+                instagram.href="https://www.instagram.com/aceleradora.ufpr/"
+                site.style.display = "none";
+                break;
             default:
                 console.log('Classe não reconhecida');
                 break;
@@ -82,9 +92,10 @@ cards.forEach((card) => {
 })
 
 inicio.addEventListener("click", () => {
-    trd.style.right = "0vw"
-    trd.style.height="auto"
-})
+  trd.style.right = "0vw";
+  trd.style.height = "auto";
+  fft.classList.remove("active");
+});
 
 
 window.addEventListener('scroll', () => {
@@ -93,9 +104,9 @@ window.addEventListener('scroll', () => {
     if (window.scrollY < distanciaParaMudar && window.scrollY < window.innerHeight * 4) {
         texto.innerHTML = "Olá! Sou estudante de <strong>Ciência da Computação na UFPR</strong>. Comecei a me aventurar no <strong>design</strong> e <strong>programação</strong> em 2022, quando entrei no curso e no projeto de extenção Ciência para Todos (CPT).";
     } else if (window.scrollY < window.innerHeight * 3.5) {
-        texto.innerHTML = "Sou um <strong>libriano</strong> de <strong>22 anos</strong> que ama organizar e dar um 'tchan' em projetos, mas também ama passar tempo com amigos.";
+        texto.innerHTML = "Tenho <strong>23 anos</strong>, amo organizar e dar um 'tchan' em projetos que façam sentido, mas também amo passar um bom tempo com amigos.";
     } else {
-        texto.innerHTML = "A maioria dos meus projetos foram voltados a eventos entre a <strong>comunidade interna e externa da UFPR</strong>, como você vai ver a seguir :)";
+        texto.innerHTML = "A maioria dos meus projetos foram voltados à eventos entre a <strong>comunidade interna e externa da UFPR</strong>, como você vai ver a seguir :)";
     }
 });
 
